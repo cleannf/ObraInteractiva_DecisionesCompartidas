@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Decisiones Compartidas</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="crt-overlay"></div>
+  <div class="contenido" id="menuPrincipal">
+  <div class="titulo-bloque">
+    <img src="assets/logo.png" alt="Logo" class="logo">
+    <h1 class="titulo grande">DECISIONES</h1>
+    <h2 class="titulo pequeño">COMPARTIDAS</h2>
+  </div>
+
+  <div class="menu-botones">
+    <button class="btn" id="btnIniciar">Iniciar</button>
+    <button class="btn" id="btnCreditos">Créditos</button>
+  </div>
+
+  <div id="modalCreditos" class="modal">
+  <div class="modal-contenido">
+    <button class="cerrar" onclick="cerrarCreditos()">✕</button>
+    <div class="creditos-texto">
+      <p>Estudiante: Juan David Gutierrez Pedraza</p>
+      <p>Arte interactivo</p>
+      <p>Grupo: 13</p>
+    </div>
+  </div>
+</div>
+
+<div id="modalNombre" class="modal">
+  <div class="modal-contenido">
+    <button class="cerrar" onclick="cerrarNombre()">✕</button>
+    <div class="nombre-formulario">
+      <label for="nombreUsuario">Escribe tu nombre:</label>
+      <input type="text" id="nombreUsuario" class="campo-nombre">
+      <p id="advertencia" class="advertencia" style="display: none;">Por favor, escribe tu nombre.</p>
+      <button class="btn-siguiente" onclick="guardarNombre()">Siguiente</button>
+    </div>
+  </div>
+</div>
+
+</div>
+  </div>
+
+  <div id="escenario"></div>
+
+  <button id="botonMute" onclick="toggleMusica()" class="boton-sonido">
+    <img id="iconoSonido" src="assets/Sonido.png" alt="Sonido" class="icono-sonido">
+  </button>
+  <script src="script.js"></script>
+</body>
+</html>

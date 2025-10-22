@@ -1,0 +1,432 @@
+@font-face {
+  font-family: 'Jersey25';
+  src: url('assets/fonts/Jersey25.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'ShareTechMono';
+  src: url('assets/fonts/ShareTechMono.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  margin: 0;
+  background-color: #000;
+  color: #fff;
+  font-family: 'Jersey25', sans-serif;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contenido {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.titulo-bloque {
+  margin-bottom: -3rem;
+}
+
+.titulo.grande {
+  font-size: 7rem; /* ← Ajusta aquí el tamaño de “DECISIONES” */
+  margin-bottom: -1rem; /* ← Reduce el espacio debajo del título grande */
+  line-height: 1;
+}
+
+.titulo.pequeño {
+  font-size: 5.9rem; /* ← Ajusta aquí el tamaño de “COMPARTIDAS” */
+  margin-top: 0; /* ← Asegúrate de que no haya espacio extra arriba */
+  line-height: 1;
+}
+
+.menu-botones {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.btn {
+  font-family: 'Jersey25', sans-serif;
+  background-color: transparent;
+  border: 3px solid #fff;
+  color: #fff;
+  padding: 1.2rem 12.6rem; /* ← Más espacio interno */
+  font-size: 1.8rem;       /* ← Texto más grande */
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #fff;
+  color: #000;
+}
+
+.boton-sonido {
+  position: absolute;
+  top: 46px;
+  left: 500px;
+  background-color: #000000;
+  border: 2px solid #ffffff;
+  border-radius: 50px;
+  padding: 5px;
+  cursor: pointer;
+  z-index: 1000;
+  transition: background-color 0.3s, border-color 0.3s;
+}
+
+.boton-sonido:hover {
+  background-color: #474747;
+  border-color: #ffffff;
+}
+
+.boton-sonido.silenciado {
+  background-color: #ffffff;
+  border-color: #ffffff;
+}
+
+.icono-sonido {
+  width: 30px;
+  height: 30px;
+  transition: filter 0.3s;
+}
+
+.boton-sonido:hover .icono-sonido {
+  filter: brightness(1.2);
+}
+
+
+.logo {
+  width: 120px;
+  height: auto;
+  margin-bottom: -14.8rem;
+  margin-left: 48rem;   /* Mueve la imagen hacia la derecha */
+  margin-right: 5rem;  /* Mueve la imagen hacia la izquierda */
+  display: block;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.85);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-contenido {
+  background-color: #000;
+  border: 2px solid #fff;
+  padding: 2rem;
+  text-align: center;
+  position: relative;
+  width: 400px;
+  font-family: 'Jersey25', sans-serif;
+}
+
+.creditos-texto p {
+  margin: 1rem 0;
+  font-size: 1.5rem;
+  color: #fff;
+}
+
+.cerrar {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.campo-nombre {
+  font-family: 'Jersey25', sans-serif;
+  font-size: 1.5rem;
+  padding: 0.5rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  width: 100%;
+  background-color: #000;
+  color: #fff;
+  border: 2px solid #fff;
+  text-align: center;
+}
+
+.nombre-formulario {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.nombre-formulario label {
+  font-size: 1.8rem; /* ← Puedes subirlo a 2.5rem si quieres más impacto */
+  margin-bottom: 1rem;
+  color: #fff;
+  font-family: 'Jersey25', sans-serif;
+}
+
+.btn-siguiente {
+  font-family: 'Jersey25', sans-serif;
+  font-size: 1.5rem;
+  padding: 0.8rem 2rem;
+  margin-top: 1rem;
+  background-color: transparent;
+  border: 3px solid #fff;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-siguiente:hover {
+  background-color: #fff;
+  color: #000;
+}
+
+.advertencia {
+  color: #ff4444;
+  font-size: 1rem;
+  margin-top: 0.5rem;
+}
+
+.fade-out {
+  animation: fadeOut 1s ease forwards;
+}
+
+@keyframes fadeOut {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+.bloque-ia {
+  display: flex;
+  justify-content: center; /* Puedes cambiar a 'flex-start' o 'flex-end' */
+  align-items: center;     /* Puedes ajustar verticalmente */
+  height: 100vh;
+  background-color: #000;
+}
+
+.cuadro-blanco {
+  background-color: #fff;
+  padding: 0.02rem;
+  border-radius: 0.5rem;
+  display: inline-block;
+
+  /* Mueve el cuadro con precisión */
+  transform: translate(600px, -200px); /* X: izquierda, Y: arriba */
+}
+
+.imagen-eko {
+  width: 200px; /* Cambia el tamaño aquí */
+  height: auto;
+  display: block;
+}
+
+.titulo-esquina {
+  position: absolute;
+  top: 10px;     /* ← Ajusta verticalmente */
+  left: 300px;    /* ← Ajusta horizontalmente */
+  z-index: 1000;
+  text-align: left;
+}
+
+.linea-decision {
+  font-family: 'Jersey25', sans-serif;
+  font-size: 2rem;         /* ← Tamaño de “DECISIONES” */
+  margin-bottom: -0.4rem;    /* ← Sangría entre líneas */
+  line-height: 1;
+  color: #fff;
+}
+
+.linea-compartidas {
+  font-family: 'Jersey25', sans-serif;
+  font-size: 1.7rem;       /* ← Tamaño de “COMPARTIDAS” */
+  margin-top: 0;
+  line-height: 1;
+  color: #fff;
+}
+
+.vinyeta-base {
+  position: absolute;
+  top: 22%;      /* ← Ajusta verticalmente */
+  left: 16%;     /* ← Ajusta horizontalmente */
+  z-index: 1000;
+}
+
+.vinyeta-caja {
+  background-color: #ffffff;
+  border: 2px solid #ffffff;
+  padding: 2rem;
+  border-radius: 0.5rem;
+  width: 900px;
+  font-family: 'ShareTechMono', monospace;
+  font-size: 1.5rem;
+  color: #000000;
+  position: relative;
+}
+
+.vinyeta-flecha {
+  position: absolute;
+  right: -20px; /* ← Cambia a left/top/bottom si quieres otra dirección */
+  top: 50%;
+  transform: translateY(-50%);
+  width: 0;
+  height: 8;
+  border-top: 15px solid transparent;
+  border-bottom: 15px solid transparent;
+  border-left: 20px solid #ffffff;
+}
+
+.mensaje-avance {
+  position: absolute;
+  top: 180px;
+  left: 300px;
+  font-family: 'Jersey25', sans-serif;
+  font-size: 1.2rem;
+  color: #ffffff;
+  opacity: 0.6;
+  z-index: 1000;
+  pointer-events: none; /* ← evita que bloquee clics debajo */
+}
+
+.fade-out-element {
+  animation: fadeOut 1s forwards;
+}
+
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+}
+
+.fade-out-element {
+  animation: fadeOut 0.6s ease forwards;
+}
+
+
+.titulo-problematica {
+  position: absolute;
+  top: 400px;     /* ← Ajusta verticalmente */
+  left: 300px;   /* ← Ajusta horizontalmente */
+  font-family: 'Jersey25', sans-serif;
+  font-size: 2rem;
+  color: #ffffff;
+}
+
+.bloque-pregunta {
+  position: absolute;
+  top: 450px;         /* ← Ajusta posición vertical */
+  left: 300px;        /* ← Ajusta posición horizontal */
+  width: 1000px;       /* ← Ajusta ancho */
+  height: auto;       /* ← Puedes cambiar a '400px' si quieres altura fija */
+  padding: 2rem;      /* ← Espacio interno para que el texto respire */
+  font-family: 'ShareTechMono', monospace;
+  font-size: 1.5rem;
+  color: #ffffff;
+  border: 2px solid #ffffff;   /* ← Borde blanco */
+  border-radius: 10px;         /* ← Opcional: bordes redondeados */
+  background-color: rgba(0, 0, 0, 0.4); /* ← Fondo semitransparente para contraste */
+  box-sizing: border-box;      /* ← Asegura que padding no rompa el ancho */
+}
+
+.titulo-respuestas {
+  position: absolute;
+  top: 650px;
+  left: 300px;
+  font-family: 'Jersey25', sans-serif;
+  font-size: 1.5rem;
+  color: #ffffff;
+}
+
+.bloque-opciones {
+  position: absolute;
+  top: 700px;
+  left: 300px;
+  display: flex;
+  flex-direction: column; /* ← Apila verticalmente */
+  gap: 1.5rem;
+}
+
+.boton-respuesta {
+  font-family: 'ShareTechMono', monospace;
+  font-size: 1.2rem;
+  padding: 1rem 2rem;
+  background-color: #ffffff;
+  border: 2px solid #000;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  text-align: left;
+}
+
+.boton-respuesta:hover {
+  background-color: #474747;
+  color: #ffffff;
+}
+
+.ayuda-boton {
+  position: absolute;
+  top: 400px;   /* ← Ajusta según tu diseño */
+  left: 1428px;
+  background-color: #f0f0f0;
+  border-color: #000000;
+}
+
+.ayuda-boton:hover {
+  background-color: #474747;
+  color: #ffffff;
+}
+
+.ayuda-boton.fade-out-element {
+  animation: fadeOut 0.5s ease forwards;
+}
+
+.fade-in-element {
+  animation: fadeIn 0.6s ease forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.hidden {
+  display: none !important;
+}
+
+.boton-reinicio {
+  position: absolute;
+  top: 38%; /* Ajusta según tu diseño */
+  left: 51.5%;
+  transform: translateX(-50%);
+  font-family: 'Jersey25', sans-serif;
+  font-size: 1.5rem;
+  padding: 1rem 2rem;
+  background-color: #000000;
+  color: #ffffff;
+  border: 2px solid #ffffff;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  z-index: 1000;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.boton-reinicio:hover {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+.fade-out-escenario {
+  opacity: 0;
+  transition: opacity 1s ease;
+}
