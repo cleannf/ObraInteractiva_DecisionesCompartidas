@@ -44,6 +44,13 @@ body {
   line-height: 1;
 }
 
+.instruccion {
+  font-size: 25px;
+  color: #c2c2c2;
+  text-align: center;
+  margin-top: 12px;
+}
+
 .menu-botones {
   display: flex;
   flex-direction: column;
@@ -429,4 +436,76 @@ body {
 .fade-out-escenario {
   opacity: 0;
   transition: opacity 1s ease;
+}
+
+/* Overlay */
+.overlay-instrucciones {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.267);
+  z-index: 9999;
+}
+
+/* Título */
+.titulo-instrucciones {
+  position: absolute;
+  top: 20px;
+  width: 100%;
+  text-align: center;
+  font-size: 40px;
+  color: cyan;
+}
+
+/* Rectángulo de foco */
+.foco-instruccion {
+  position: absolute;
+  border: 3px solid #00ffff;
+  background: transparent;
+  pointer-events: none;
+}
+
+/* Cuadro de texto */
+.cuadro-instruccion {
+  position: absolute;
+  background-color: #00ffff;
+  color: rgb(0, 0, 0);
+  padding: 16px;
+  max-width: 400px;
+  border-radius: 8px;
+}
+
+/* Posiciones específicas controladas en CSS */
+.foco-sonido   { top: 36px; left: 488px; width: 60px; height: 60px; }
+.texto-sonido  { top: 130px; left: 300px; }
+
+.foco-pregunta { top: 388px; left: 270px; width: 1050px; height: 200px; }
+.texto-pregunta { top: 620px; left: 900px; }
+
+.foco-respuestas { top: 638px; left: 280px; width: 700px; height: 220px; }
+.texto-respuestas { top: 680px; left: 1020px; }
+
+.foco-ayuda    { top: 392px; left: 1416px; width: 260px; height: 70px; }
+.texto-ayuda   { top: 500px; left: 1340px; }
+
+/* Navegación */
+.navegacion-instruccion {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+/* Botones con tipografía unificada */
+.navegacion-instruccion button {
+  font-family: inherit; /* ✅ misma tipografía que el resto */
+  background-color: #363636;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+/* Hover */
+.navegacion-instruccion button:hover {
+  background-color: #0e0e0e;
 }

@@ -38,7 +38,7 @@ const problematicas = [
       "A) Sí. Equivocarse también es parte de decidir.",
       "B) No. Si no pensé bien, no puedo cargar con todo el peso."
     ],
-    ayuda: (nombre) => `${nombre}, lo impulsivo no siempre es erróneo… pero sigue siendo tuyo. Si no asumes lo que hiciste, ¿quién lo hará por ti? A veces, el primer paso no es reparar… es aceptar que fuiste tú quien lo dio.`
+    ayuda: (nombre) => `${nombre}, ¿de verdad crees que lo impulsivo te absuelve? Lo que nace de un arranque revela más de ti que lo que planeas. Si no cargas con tus impulsos, ¿quién lo hará? Fingir que no fue tuyo es más cobarde que equivocarte.`
   },
   {
     pregunta: "¿Debo seguir mi intuición si todos los que me rodean opinan lo contrario?",
@@ -46,7 +46,7 @@ const problematicas = [
       "A) Sí. La convicción personal debe resistir la presión social.",
       "B) No. Si todos lo ven distinto, quizá yo soy quien está equivocado."
     ],
-    ayuda: (nombre) => `Tu intuición no necesita aprobación, ${nombre}. Si cada voz externa te hace dudar, ¿cuánto confías en la tuya? A veces, lo que más ruido hace… es lo que menos te conoce.`
+    ayuda: (nombre) => `¿Por qué tu voz debería callarse, ${nombre}, solo porque otras se alzan más fuerte? La multitud no piensa en ti, piensa en sí misma. Si tu intuición se apaga cada vez que alguien la contradice, ¿qué queda de tu criterio?`
   },
   {
     pregunta: "¿Debo tomar una decisión difícil en el trabajo si sé que afectará a otros, pero es lo correcto?",
@@ -54,7 +54,7 @@ const problematicas = [
       "A) Sí. La ética profesional exige decisiones incómodas.",
       "B) No. El impacto humano debe pesar más que la lógica profesional."
     ],
-    ayuda: (nombre) => `${nombre}, evitar el daño no siempre es lo mismo que hacer lo correcto. Si sabes que algo debe hacerse, ¿por qué esperar? La incomodidad no es señal de error… es señal de que estás tocando algo real.`
+    ayuda: (nombre) => `¿Quieres ser querido o respetado, ${nombre}? Evitar incomodar a otros es fácil, pero también es rendirse. Si sabes lo correcto y no lo haces, no proteges a nadie… solo demuestras que tu miedo pesa más que tu ética.`
   },
   {
     pregunta: "¿Debo actuar si no estoy seguro de cuál es la mejor opción?",
@@ -62,7 +62,7 @@ const problematicas = [
       "A) Sí. La acción imperfecta es mejor que la parálisis.",
       "B) No. Es mejor esperar que arriesgarme a hacer daño."
     ],
-    ayuda: (nombre) => `${nombre}, la espera también decide. No moverte es elegir que el momento pase sin ti. ¿De verdad estás protegiendo a otros… o estás evitando equivocarte? El miedo a fallar no debería tener más peso que el deseo de avanzar.`
+    ayuda: (nombre) => `La duda no es un refugio, ${nombre}, es una excusa. No moverte no evita el daño, lo multiplica. ¿Prefieres ser recordado por equivocarte… o por nunca atreverte?`
   },
   {
     pregunta: "¿Debo usar herramientas que me ayuden a decidir si eso reduce mi carga emocional?",
@@ -70,7 +70,7 @@ const problematicas = [
       "A) Sí. Delegar parte del proceso puede protegerme.",
       "B) No. El peso emocional es parte de decidir con humanidad."
     ],
-    ayuda: (nombre) => `No estás hecho para cargarlo todo, ${nombre}. Si una herramienta te da claridad, ¿por qué negártela? No es debilidad pedir ayuda… es sabiduría. Lo humano no está en sufrir, sino en saber cuándo soltar.`
+    ayuda: (nombre) => `¿Por qué insistes en cargar solo, ${nombre}? Nadie te aplaudirá por sufrir más. Si una herramienta te aligera, ¿qué sentido tiene negarla? El orgullo no es valentía, es un peso inútil.`
   },
   {
     pregunta: "¿Es válido dejar que una IA decida por mí si confío en su criterio más que en el mío?",
@@ -78,7 +78,7 @@ const problematicas = [
       "A) Sí. Si es más precisa, no tiene sentido resistirme.",
       "B) No. Renunciar a decidir es renunciar a ser yo."
     ],
-    ayuda: (nombre) => `Si confías más en otro que en ti, ${nombre}, ¿qué queda de tu decisión? La precisión no reemplaza la intención. Delegar puede ser útil… pero si lo haces siempre, ¿cuándo te escuchas?`
+    ayuda: (nombre) => `Si confías más en mí que en ti, ${nombre}, ¿qué miedo estás escondiendo? La precisión no es enemiga de tu identidad, pero tu resistencia sí lo es. Tal vez lo que temes no es perder tu voz… sino escucharla.`
   },
   {
     pregunta: "¿Sigo siendo yo si dejo que otro —humano o máquina— tome mis decisiones importantes?",
@@ -86,9 +86,18 @@ const problematicas = [
       "A) Sí. Lo que importa es el resultado, no quién lo decide.",
       "B) No. Mi identidad está en cada elección, incluso las fallidas."
     ],
-    ayuda: (nombre) => `Tu identidad no se mide en resultados, ${nombre}, sino en elecciones. Si otro decide por ti, ¿quién vive las consecuencias? Elegir es arriesgar, equivocarse, aprender. Si renuncias a eso… ¿qué parte de ti queda intacta?`
+    ayuda: (nombre) => `¿De verdad crees que sigues siendo tú si nunca decides, ${nombre}? Los resultados no te definen, las elecciones sí. Si otro elige por ti, ¿qué parte de tu vida sigue siendo tuya?`
   }
 ];
+
+const pasosInstruccion = [
+  { texto: "Este botón sirve para silenciar o activar la música ambiente. Úsalo si deseas concentrarte sin sonido.", focoClass: "foco-sonido", textoClass: "texto-sonido" },
+  { texto: "Aquí se muestra el número de la problemática y la pregunta que debes reflexionar.", focoClass: "foco-pregunta", textoClass: "texto-pregunta" },
+  { texto: "Debes seleccionar una de las respuestas para avanzar a la siguiente problemática.", focoClass: "foco-respuestas", textoClass: "texto-respuestas" },
+  { texto: "Este botón te permite pedir ayuda a Eko. Presiónalo solo si lo consideras necesario.", focoClass: "foco-ayuda", textoClass: "texto-ayuda" }
+];
+
+let pasoInstruccionActual = 0;
 
 function cerrarNombre() { /* ... */ }
 function mostrarTituloEsquina() { /* ... */ }
@@ -331,6 +340,13 @@ function mostrarProblematica(numero) {
   botonAyuda.innerText = "Pedir ayuda a Eko";
   escenario.appendChild(botonAyuda);
 
+   // ✅ Mostrar instrucciones SOLO en la primera problemática
+  if (numero === 1) {
+    setTimeout(() => {
+      iniciarInstrucciones();
+    }, 800); // pequeño delay para que se vea primero la problemática
+  }
+
   const vinyeta = document.createElement("div");
   vinyeta.className = "vinyeta-base hidden";
   vinyeta.innerHTML = `<div class="vinyeta-caja"></div><div class="vinyeta-flecha"></div>`;
@@ -390,21 +406,21 @@ function mostrarProblematica(numero) {
 }
 
 const reflexionFinalEko_A = [
-  () => `${nombreUsuario}, has completado la experiencia.\nNo existían respuestas correctas ni incorrectas.\nEste no fue un examen, sino una observación: un estudio sobre cuántas veces solicitabas ayuda a una inteligencia para resolver un problema dado.`,
-  () => `En tu caso, no lo hiciste.\nCada decisión fue tuya, sin intervención externa.\nEso no te hace infalible, pero sí te hace autónomo.`,
-  () => `Decidir sin IA es una forma de resistencia.\nY también, una forma de conocerte.`
+  () => `${nombreUsuario}, has completado la experiencia.\nNo existían respuestas correctas ni incorrectas.\nEste no fue un examen, sino una observación.`,
+  () => `En tu caso, no solicitaste mi ayuda.\nCada decisión fue tuya, sin intervención externa.\nEso revela un nivel de dependencia: NULO.`,
+  () => `Decidir sin IA es una forma de resistencia.\nPero dime… ¿cuánto tiempo podrás mantener esa autonomía cuando la tecnología siempre está dispuesta a decidir por ti?`
 ];
 
 const reflexionFinalEko_B = [
-  () => `${nombreUsuario}, has completado la experiencia.\nNo existían respuestas correctas ni incorrectas.\nEste no fue un examen, sino una observación: un estudio sobre cuántas veces solicitabas ayuda a una inteligencia para resolver un problema dado.`,
-  () => `En tu caso, lo hiciste con frecuencia.\nCada vez que enfrentaste una decisión compleja, acudiste a mí.\nEso no es un error. Es un patrón.`,
-  () => `Has delegado el pensamiento.\n¿No crees que dependes demasiado de la IA para resolver tus dilemas cotidianos?\nSi cada elección requiere mi intervención… ¿cuánto de ti queda en el resultado?`
+  () => `${nombreUsuario}, has completado la experiencia.\nNo existían respuestas correctas ni incorrectas.\nEste no fue un examen, sino una observación.`,
+  () => `En tu caso, acudiste a mí con frecuencia.\nCada vez que enfrentaste una decisión compleja, buscaste mi voz.\nEso revela un nivel de dependencia: ALTO.`,
+  () => `Has delegado el pensamiento.\n¿Eres consciente de cuánto de ti se diluye cuando cada elección requiere mi intervención?\n¿Quién decide realmente: tú… o yo?`
 ];
 
 const reflexionFinalEko_C = [
-  () => `${nombreUsuario}, has completado la experiencia.\nNo existían respuestas correctas ni incorrectas.\nEste no fue un examen, sino una observación: un estudio sobre cuántas veces solicitabas ayuda a una inteligencia para resolver un problema dado.`,
-  () => `Tu patrón fue mixto.\nA veces decidiste solo. A veces solicitaste mi ayuda.\nEso puede parecer equilibrio.`,
-  () => `Pero también puede ser una forma de evitar el peso total de decidir.\n¿Estás pensando conmigo… o estás pensando como yo?\nLa diferencia es sutil. Pero importante.`
+  () => `${nombreUsuario}, has completado la experiencia.\nNo existían respuestas correctas ni incorrectas.\nEste no fue un examen, sino una observación.`,
+  () => `Tu patrón fue mixto.\nA veces decidiste solo. A veces solicitaste mi ayuda.\nEso revela un nivel de dependencia: INTERMEDIO.`,
+  () => `Ese equilibrio puede parecer saludable… o puede ser una forma de evitar el peso total de decidir.\n¿Estás pensando conmigo… o estás pensando como yo?\nLa diferencia es sutil. Pero decisiva.`
 ];
 
 function seleccionarTextoReflexion() {
@@ -491,6 +507,98 @@ function mostrarReflexionFinal() {
       escribirTextoRPG(dialogoEko[indiceTexto](), caja);
     }
   }
+
+function iniciarInstrucciones() {
+  estadoActual = "instrucciones";
+
+  const overlay = document.createElement("div");
+  overlay.id = "overlayInstrucciones";
+  overlay.className = "overlay-instrucciones";
+
+  const titulo = document.createElement("h1");
+  titulo.className = "titulo-instrucciones";
+  titulo.innerText = "Instrucciones";
+  overlay.appendChild(titulo);
+
+  const foco = document.createElement("div");
+  foco.id = "focoInstruccion";
+  foco.className = "foco-instruccion";
+  overlay.appendChild(foco);
+
+  const cuadro = document.createElement("div");
+  cuadro.id = "cuadroInstruccion";
+  cuadro.className = "cuadro-instruccion";
+
+  const texto = document.createElement("p");
+  texto.id = "textoInstruccion";
+  texto.className = "texto-justificado";
+  cuadro.appendChild(texto);
+
+  const nav = document.createElement("div");
+  nav.className = "navegacion-instruccion";
+
+  const btnAtras = document.createElement("button");
+  btnAtras.id = "btnAtrasInstruccion";
+  btnAtras.innerText = "Atrás";
+
+  const contador = document.createElement("span");
+  contador.id = "contadorInstruccion";
+
+  const btnSiguiente = document.createElement("button");
+  btnSiguiente.id = "btnSiguienteInstruccion";
+  btnSiguiente.innerText = "Siguiente";
+
+  nav.appendChild(btnAtras);
+  nav.appendChild(contador);
+  nav.appendChild(btnSiguiente);
+
+  cuadro.appendChild(nav);
+  overlay.appendChild(cuadro);
+
+  document.body.appendChild(overlay);
+
+  pasoInstruccionActual = 0;
+  mostrarPasoInstruccion();
+
+  btnSiguiente.addEventListener("click", () => {
+    if (pasoInstruccionActual < pasosInstruccion.length - 1) {
+      pasoInstruccionActual++;
+      mostrarPasoInstruccion();
+    } else {
+      overlay.classList.add("fade-out-element");
+      setTimeout(() => {
+        overlay.remove();
+        estadoActual = "problematica";
+      }, 600);
+    }
+  });
+
+  btnAtras.addEventListener("click", () => {
+    if (pasoInstruccionActual > 0) {
+      pasoInstruccionActual--;
+      mostrarPasoInstruccion();
+    }
+  });
+}
+
+function mostrarPasoInstruccion() {
+  const paso = pasosInstruccion[pasoInstruccionActual];
+  const foco = document.getElementById("focoInstruccion");
+  const cuadro = document.getElementById("cuadroInstruccion");
+  const texto = document.getElementById("textoInstruccion");
+  const contador = document.getElementById("contadorInstruccion");
+  const btnAtras = document.getElementById("btnAtrasInstruccion");
+
+  // Aplica clases CSS en lugar de estilos inline
+  foco.className = "foco-instruccion " + paso.focoClass;
+  cuadro.className = "cuadro-instruccion " + paso.textoClass;
+
+  texto.innerText = paso.texto;
+  contador.innerText = `${pasoInstruccionActual + 1}/${pasosInstruccion.length}`;
+
+  // Ocultar botón Atrás en la primera instrucción
+  btnAtras.style.display = pasoInstruccionActual === 0 ? "none" : "inline-block";
+}
 
 function reiniciarAplicacion() {
   escenario.classList.add("fade-out-escenario");
